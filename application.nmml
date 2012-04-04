@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- metadata, make sure 'package' is at least 2 segments (ie. com.myproject) -->
+	<app file="NewProject" title="New Project" main="Main" package="com.tux4kids.tux4math" 
+		version="1.0.0" company="Deepak" />
+		
+	<!-- output -->
+	<window width="800" height="640" fps="60" background="0xFFFFFF" orientation="landscape" resizable="true" />
+	<set name="BUILD_DIR" value="bin" />
+	
+	<!-- classpath, haxe libs -->
+	<classpath name="src" />
+	<haxelib name="nme" />
+	
+	<!-- assets -->
+	<icon name="assets/nme.svg" />
+	<assets path="assets" include="*" exclude="nme.svg" />
+	<assets path="Assets/music" rename="assets/music" type="music" include="*" />
+	
+	<!-- DLLs -->
+	<ndll name="std" />
+	<ndll name="regexp" />
+	<ndll name="zlib" />
+	<ndll name="nme" haxelib="nme" />
+	
+	<set name="SWF_VERSION" value="10.1" />
+	
+	
+	<!-- Windows app: hide console -->
+	<!--<setenv name="no_console" value="1" />-->
+</project>

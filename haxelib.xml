@@ -1,0 +1,7 @@
+<project name="nape" url="https://github.com/deltaluca/nape" license="BSD">
+<user name="deltaluca"/>
+<tag v="cross"/>
+<tag v="game"/>
+<description>Nape 2D Physics engine</description>
+<version name="m9.1-r1">Fixed bug due to mis-used of Std.is in comparing against Vector types for such places as Polygon constructors</version>
+</project>
