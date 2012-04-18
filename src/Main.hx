@@ -196,22 +196,37 @@ class Main extends Sprite
 				//Lib.exit ();
 				playing = false;
 				underlay_active = true;
-				var exit_sprite:Sprite = new Sprite();
+				var exit_sprite:Sprite = new Sprite();   // Main sprite for exit and continue menu.
 				var underlay:Shape = new Shape();
 				underlay.graphics.beginFill(0x000000,0.85);
 				underlay.graphics.drawRect(0, 0, 480, 320);
 				exit_sprite.addChild(underlay);
 				
 				var exit:Bitmap = new Bitmap(Assets.getBitmapData("assets/exit.png"));
-				var right:Bitmap = new Bitmap(Assets.getBitmapData("assets/right.png"));
+				var right:Bitmap = new Bitmap(Assets.getBitmapData("assets/continue.png"));
 				right.scaleX = 1 / 2;
 				right.scaleY = 1 / 2;
-				exit.x = 50;
-				exit.y = 100;
-				right.x = 250;
-				right.y = 100;
-				exit_sprite.addChild(exit);
-				exit_sprite.addChild(right);
+				var exit_button_sprite: Sprite = new Sprite();
+				exit_button_sprite.addChild(exit);
+				exit_button_sprite.x = 50;
+				exit_button_sprite.y = 100;
+				exit_button_sprite.addEventListener(TouchEvent.TOUCH_BEGIN, function(event) {
+					Lib.exit();
+				});
+				
+				
+				var right_button_sprite: Sprite = new Sprite();
+				right_button_sprite.addChild(right);
+				right_button_sprite.x = 250;
+				right_button_sprite.y = 100;
+				right_button_sprite.addEventListener(TouchEvent.TOUCH_BEGIN, function(event) {
+					removeChild(exit_sprite);
+					playing = true;
+					underlay_active = false;
+				});
+				
+				exit_sprite.addChild(exit_button_sprite);
+				exit_sprite.addChild(right_button_sprite);
 				addChild(exit_sprite);
 			}		
 		});

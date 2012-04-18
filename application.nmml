@@ -11,6 +11,7 @@
 	<!-- classpath, haxe libs -->
 	<classpath name="src" />
 	<haxelib name="nme" />
+	<haxelib name="nape"/>
 	
 	<!-- assets -->
 	<icon name="assets/nme.svg" />
